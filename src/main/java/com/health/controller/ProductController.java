@@ -30,7 +30,7 @@ public class ProductController {
     private final ModelMapper modelMapper;
 
     // =============================
-    // 🔹 GET - Listar todos
+    // GET - Listar todos
     // =============================
     @GetMapping
     public ResponseEntity<List<ProductDTO>> findAll() throws Exception {
@@ -42,7 +42,7 @@ public class ProductController {
     }
 
     // =============================
-    // 🔹 GET - Buscar por ID
+    // GET - Buscar por ID
     // =============================
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> findById(@PathVariable("id") Integer id) throws Exception {
@@ -51,7 +51,7 @@ public class ProductController {
     }
 
     // =============================
-    // 🔹 POST - Registrar nuevo producto
+    // POST - Registrar nuevo producto
     // =============================
     @PostMapping
     public ResponseEntity<ProductDTO> save(@Valid @RequestBody ProductDTO dto) throws Exception {
@@ -73,7 +73,7 @@ public class ProductController {
     }
 
     // =============================
-    // 🔹 PUT - Actualizar producto
+    // PUT - Actualizar producto
     // =============================
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> update(@PathVariable("id") Integer id,
@@ -90,7 +90,7 @@ public class ProductController {
     }
 
     // =============================
-    // 🔹 DELETE - Eliminar producto
+    // DELETE - Eliminar producto
     // =============================
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Integer id) throws Exception {
@@ -99,7 +99,7 @@ public class ProductController {
     }
 
     // =============================
-    // 🔁 Métodos de conversión
+    // Métodos de conversión
     // =============================
     private ProductDTO convertToDto(Product obj) {
         ProductDTO dto = modelMapper.map(obj, ProductDTO.class);

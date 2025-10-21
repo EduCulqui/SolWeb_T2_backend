@@ -13,25 +13,34 @@ import java.time.LocalDate;
 public class ProductDTO {
     private Integer idProduct;
 
-    @NotNull
-    @Size(min = 3, max = 100)
+    @NotNull @Size(min = 3, max = 100)
     private String name;
-    @NotNull
-    @Size(max = 255)
+
+    @NotNull @Size(max = 255)
     private String description;
-    @NotNull
-    @Size(max = 50)
+
+    @NotNull @Size(max = 50)
     private String presentation;
 
-    @NotNull
-    @PositiveOrZero
+    @NotNull @PositiveOrZero
     private Double unitPrice;
 
-    @NotNull
-    @Min(value = 0)
+    @NotNull @Min(0)
     private Integer stock;
 
     @FutureOrPresent
     private LocalDate expired;
 
+    @NotNull
+    private Integer idCategory;
+
+    @NotNull
+    private Integer idFamily;
+
+    @NotNull
+    private Integer idLaboratory;
+
+    private String categoryName;
+    private String familyName;
+    private String laboratoryName;
 }
